@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    env_file:
+      - .env
+    networks:
+      - app_network
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    ports:
+      - "5422:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty123
+      POSTGRES_DB: guest_db
+    networks:
+      - app_network
+    volumes:
+      - challenge_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  challenge_postgres_data:
+
+networks:
+  app_network:
+    driver: bridge
