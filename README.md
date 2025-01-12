@@ -1,5 +1,9 @@
 # 99Tech Code Challenge - Backend Problem
 
+- [Problem 5](#problem-5-a-crude-server)
+- [Problem 4](#problem-4-three-ways-to-sum-to-n)
+- [Problem 6](#problem-6-architecture)
+
 ## Problem 5: A Crude Server
 ### Installation and Settings
 
