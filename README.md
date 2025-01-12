@@ -51,3 +51,5 @@ $ npm run problem-4
 ```
 
 ## Problem 6: Architecture
+
+- [Document](/problem6/README.md)
